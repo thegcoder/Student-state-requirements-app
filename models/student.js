@@ -25,11 +25,12 @@ const mongoose = require('./connection.js')
  * NOTE: skip this if you are not using mongoose
  *
  */
-const StudentSchema = new mongoose.Schema({
- name: String,
- studentId: mongoose.Types.ObjectId
-})
-
+ const StudentSchema = new mongoose.Schema({
+      name: {
+          type: String,
+          required: true
+      }
+  });
 /* Step 3
  *
  * TODO: create collection API

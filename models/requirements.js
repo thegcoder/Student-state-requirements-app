@@ -52,7 +52,7 @@ async function update(type, id, object) {
             return data;
     }
 }
-async function deleter(type, id) {
+async function delete(type, id) {
     let data = Promise.resolve(false);
     switch (type) {
       case 'requirements':
@@ -64,26 +64,10 @@ async function deleter(type, id) {
 }
 
 
-
-
-
-
-  function getRequirements() {
-    return RequirementsCollection.find()
-  }
-
-  function addRequirement(requirementsObject) {
-    return RequirementsCollection.create(requirementsObject)
-  }
-
-  function getRequirements(requirementsId) {
-    return RequirementsCollection.findByRequirementId(requirementsId)
-  }
-
-  function updateRequirement(requirementsId, requirementsObject) {
-    return RequirementsCollection.findByIdAndUpdate(requirementsId, requirements)
-  }
-
-  function deleteRequirements(requirementsId) {
-    return RequirementsCollection.findByIdAndDelete(requirementsId)
-  }
+module.exports = {
+   all,
+   create,
+   read,
+   update,
+   delete
+ }
