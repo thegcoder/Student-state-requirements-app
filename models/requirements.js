@@ -19,7 +19,32 @@ const RequirementSchema = new mongoose.Schema({
     credits: number
   });*/
 
-  const RequirementsCollection = mongoose.model('English/Language Arts', RequirementsSchema)
+  async function all(type) {
+      let data = Promise.resolve(false);
+      switch (type) {
+        case 'requirements':
+            data = await Requirements.find({});
+            return data;
+            break;
+        default:
+            return data;
+  }
+  async function read(type, id) {
+    let data = Promise.resolve(false);
+    switch (type) {
+      case 'requirements':
+            data = await Requirements.findById(id);
+            return data;
+            break;
+        default:
+            return data;
+    }
+}
+
+
+
+
+
 
   function getRequirements() {
     return RequirementsCollection.find()
