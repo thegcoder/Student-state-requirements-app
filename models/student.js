@@ -69,7 +69,7 @@ const StudentCollection = mongoose.model('Student', StudentSchema)
       let data = Promise.resolve(false);
       switch (type) {
 
-  async function deleter(type, id) {
+  async function delete(type, id) {
       let data = Promise.resolve(false);
       switch (type) {
         case 'students':
@@ -78,9 +78,7 @@ const StudentCollection = mongoose.model('Student', StudentSchema)
 
 
 
-
-
-function getStudentByStudentId(studentId) {
+/*function getStudentByStudentId(studentId) {
   return StudentCollection.find({studentId: studentId})
 }
 
@@ -94,6 +92,9 @@ function addStudent(studentObject) {
  * object
  */
 module.exports = {
-  getStudentByStudentId,
-  addStudent
-}
+   all,
+   create,
+   read,
+   update,
+   delete
+ }
