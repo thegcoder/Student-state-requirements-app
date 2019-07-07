@@ -68,7 +68,13 @@ const StudentCollection = mongoose.model('Student', StudentSchema)
   async function update(type, id, object) {
       let data = Promise.resolve(false);
       switch (type) {
-        
+
+  async function deleter(type, id) {
+      let data = Promise.resolve(false);
+      switch (type) {
+        case 'students':
+            data = await Students.findByIdAndDelete(id);
+            return data;
 
 
 
