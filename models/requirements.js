@@ -52,7 +52,16 @@ async function update(type, id, object) {
             return data;
     }
 }
-
+async function deleter(type, id) {
+    let data = Promise.resolve(false);
+    switch (type) {
+      case 'requirements':
+                  data = await Requirements.findByIdAndDelete(id);
+                  return data;
+              default:
+                  return data;
+    }
+}
 
 
 
