@@ -43,7 +43,16 @@ const StudentCollection = mongoose.model('Student', StudentSchema)
  *
  * TODO: delete this it's just a sample
  *
+
  */
+ async function all(type) {
+    let data = Promise.resolve(false);
+    switch (type) {
+      case 'students':
+            data = await Students.find({});
+            return data;
+            break;
+
 function getStudentByStudentId(studentId) {
   return StudentCollection.find({studentId: studentId})
 }
