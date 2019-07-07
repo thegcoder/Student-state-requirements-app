@@ -10,15 +10,13 @@
  */
 const express = require('express')
 const app = express()
-const methodOverride = require('method-override')
-
+const hbs = require('hbs');
 /* Step 2
  *
  * import routers from controllers/
  *
  */
-const { stateRouter } = require('./controllers/state.js')
-const { studentRouter } = require('./controllers/student.js')
+ const { router } = require('./controllers/index.js');
 
 
 /* Step 3
