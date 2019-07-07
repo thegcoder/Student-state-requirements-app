@@ -1,12 +1,14 @@
-const mongoose = require('./connection.js')
+const mongoose = require('./connection.js
 
-const RequirementsSchema = new mongoose.Schema({
+const Requirements = mongoose.model('Requirements', RequirementSchema);
+
+/*const RequirementsSchema = new mongoose.Schema({
   name: 'English/Language Arts'
   credits: 4
 },
     name: String,
     credits: number
-  });
+  });*/
 
   const RequirementsCollection = mongoose.model('English/Language Arts', RequirementsSchema)
 

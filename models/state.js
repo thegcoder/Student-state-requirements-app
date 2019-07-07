@@ -28,20 +28,13 @@ const mongoose = require('./connection.js')
 const StateSchema = new mongoose.Schema({
  name: {
    type: String,
-   required: true
+   required: true,
+   unique: true
  },
- rating: {
-   type: Number,
-   min: 0,
-   max: 5
- },
- category: String,
- description: {
-   type: String,
-   required: true
- },
- imgLink: String
-})
+ requirements:[],
+ students: []
+});
+
 
 /* Step 3
  *
@@ -56,26 +49,118 @@ const StateCollection = mongoose.model('State', StateSchema)
  * TODO: delete this it's just a sample
  *
  */
-function getAllStates() {
-  return StateCollection.find()
-}
+ // Get All
+ async function all(type) {
+     let data = Promise.resolve(false);
+     switch (type) {
+         case 'states':
+             data = await States.find({});
+             return data;
+             break;
+         case 'students':
+             data = await Students.find({});
+             return data;
+             break;
+         case 'requirements':
+             data = await Requirements.find({});
+             return data;
+             break;
+         default:
+             return data;
+     }
+ }
 
-function addState(stateObject) {
-  return StateCollection.create(stateObject)
-}
+ // Create Operations
+ async function create(type, object) {
+     let data = Promise.resolve(false);
+     switch (type) {
+         case 'states':
+             data = await States.create(object);
+             return data;
+             break;
+         case 'students':
+             data = await Students.create(object);
+             return data;
+             break;
+         case 'requirements':
+             data = await Requirements.create(object);
+             return data;
+             break;
+         default:
+             return data;
+     }
+ }
 
-function getState(stateId) {
-  return StateCollection.findByStateId(stateId)
-}
+ // Read Operations
+ async function read(type, id) {
+     let data = Promise.resolve(false);
+     switch (type) {
+         case 'states':
+             data = await States.findById(id);
+             return data;
+             break;
+         case 'students':
+             data = await Students.findById(id);
+             return data;
+             break;
+         case 'requirements':
+             data = await Requirements.findById(id);
+             return data;
+             break;
+         default:
+             return data;
+     }
+ }
 
-function updateState(stateId, stateObject) {
-  return StateCollection.findByIdAndUpdate(stateId, state)
-}
+ // Update Operations
+ async function update(type, id, object) {
+     let data = Promise.resolve(false);
+     switch (type) {
+         case 'states':
+             data = await States.findByIdAndUpdate(id, object);
+             return data;
+             break;
+         case 'students':
+             data = await Students.findByIdAndUpdate(id, object);
+             return data;
+             break;
+         case 'requirements':
+             data = await Requirements.findByIdAndUpdate(id, object);
+             return data;
+             break;
+         default:
+             return data;
+     }
+ }
 
-function deleteState(stateId) {
-  return StateCollection.findByIdAndDelete(stateId)
-}
+ // Delete Operations
+ async function deleter(type, id) {
+     let data = Promise.resolve(false);
+     switch (type) {
+         case 'states':
+             data = await States.findByIdAndDelete(id);
+             return data;
+         case 'students':
+             data = await Students.findByIdAndDelete(id);
+             return data;
+         case 'requirements':
+             data = await Requirements.findByIdAndDelete(id);
+             return data;
+         default:
+             return data;
+     }
+ }
 
+ /**
+  * 4. Export all the functions
+  */
+  module.exports = {
+    all,
+    create,
+    read,
+    deleter,
+    remove
+  }
 /* Step 5
  *
  * TODO: export all functions from this file by adding their names as keys to this
