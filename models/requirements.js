@@ -41,6 +41,19 @@ const RequirementSchema = new mongoose.Schema({
     }
 }
 
+async function update(type, id, object) {
+    let data = Promise.resolve(false);
+    switch (type) {
+      case 'requirements':
+            data = await Requirements.findByIdAndUpdate(id, object);
+            return data;
+            break;
+        default:
+            return data;
+    }
+}
+
+
 
 
 
