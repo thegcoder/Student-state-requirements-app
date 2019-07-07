@@ -56,10 +56,14 @@ const StudentCollection = mongoose.model('Student', StudentSchema)
             data = await Students.create(object);
             return data;
             break;
-            
+
   async function read(type, id) {
       let data = Promise.resolve(false);
-            switch (type) {
+      switch (type) {
+      case 'students':
+            data = await Students.findById(id);
+            return data;
+            break;
 
 function getStudentByStudentId(studentId) {
   return StudentCollection.find({studentId: studentId})
