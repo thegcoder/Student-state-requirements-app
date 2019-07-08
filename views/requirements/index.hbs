@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+{{> head}}
+<body>
+    {{> nav}}
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" href="/requirements">Requirements</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/create/requirements">Create</a>
+      </li>
+    </ul>
+    <ul class="list-group">
+        {{#each items}}
+            <li class="list-group-item"><a href="requirements/{{id}}">{{name}}</a></li>
+        {{/each}}
+    </ul>
+</body>
+</html>
