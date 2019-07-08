@@ -1,5 +1,7 @@
 # Student-state-requirements-app
 
+General Assembly Project 2
+
 ## Table of contents
 
 - [Dependencies](#dependecies)
@@ -46,8 +48,18 @@ This app allows school counselors to have a live view where they view each stude
 administration/counselors can also gauge whether each individual student is on track to graduate based upon
 their individual state requirements.
 
+[Personal GitHub Repository](https://github.com/thegcoder/Student-state-requirements-app.git)
+
+[My Project Board](https://trello.com/b/kghLfLia/project-2)
+
+[Wireframe](https://wireframepro.mockflow.com/editor.jsp?editor=on&bgcolor=white&perm=Create&ptitle=GA%20Hangman%20Game%20Project%201&store=yes&category=D8e7b2b8c559eb0757b5261faecc8d495&projectid=M06abf8934be8dc0ddd0d96f81d225b311560361866822&publicid=df85fd9bf6fd456d9b9c6da03bac844a#/page/D567f9027c75bf22b9ad671dbd682b556)
+
 ## CSS Rules
 
-[Bootstrap](https://getbootstrap.com/docs/4.3) CSS rules are being used to style this application
+CSS rules are being used to style this application
 
-Link to [Heroku](https://shrouded-reaches-66943.herokuapp.com/)
+[Bootstrap](https://getbootstrap.com/docs/4.3)
+
+## Running Application
+
+[Heroku](https://shrouded-reaches-66943.herokuapp.com/)
