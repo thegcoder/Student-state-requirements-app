@@ -63,3 +63,5 @@ CSS rules are being used to style this application
 ## Running Application
 
 [Heroku](https://shrouded-reaches-66943.herokuapp.com/)
+
+[ERD] (https://user-images.githubusercontent.com/46980815/60915303-8a719780-a259-11e9-9384-c8166acf9779.jpg
